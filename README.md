@@ -1,11 +1,6 @@
-# YT Forge Super Deus — Health Fix
+# YT Forge Super Deus — Runtime Final Fix
 
-Correções desta versão:
+Versão identificada por `app_version: 2026.06.10-runtime-final-fix`.
 
-- remove a referência inexistente `find_deno_bin` que provocava erro 500 em `/api/health`;
-- move o arquivo Deno para `api/bin/deno-linux-x86_64.gz`;
-- usa `API_DIR / "bin"` para localizar o runtime;
-- torna `/api/health` resistente a exceções;
-- remove o bloco `functions` do `vercel.json`.
-
-Depois de publicar, abre `/api/health`.
+Depois do deploy, abra `/api/health?nocache=1`.
+O campo `embedded_deno_archive` deve ser `true` e o tamanho deve ser aproximadamente 43543988 bytes.
