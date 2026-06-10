@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.env
+.venv/
+venv/
+cookies.txt
+cookies_base64.txt
+.vercel/

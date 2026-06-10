@@ -1,0 +1,7 @@
+.git/
+.venv/
+venv/
+__pycache__/
+*.pyc
+cookies.txt
+cookies_base64.txt

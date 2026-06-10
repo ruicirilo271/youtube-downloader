@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050816">
+  <title>YT Forge — Super Deus</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="aurora a1"></div><div class="aurora a2"></div><div class="grid"></div>
+  <main class="shell">
+    <header class="hero">
+      <span class="eyebrow">YT FORGE • SUPER DEUS</span>
+      <h1>Qualidade máxima.<br><em>Sem complicações.</em></h1>
+      <p>Valida o vídeo pela YouTube API, processa temporariamente em <code>/tmp</code> e envia o ficheiro diretamente para o teu computador.</p>
+    </header>
+
+    <section class="panel">
+      <div class="panel-top">
+        <div><span class="step">01</span><h2>Escolhe o vídeo</h2></div>
+        <a class="health" href="/api/health" target="_blank" rel="noopener">Diagnóstico</a>
+      </div>
+
+      <form id="downloadForm">
+        <label for="url">Link do YouTube</label>
+        <div class="url-row">
+          <input id="url" name="url" type="url" placeholder="https://www.youtube.com/watch?v=..." required autocomplete="off">
+          <button id="previewBtn" type="button" class="ghost">Analisar</button>
+        </div>
+
+        <article id="preview" class="preview hidden">
+          <img id="thumb" alt="Capa do vídeo">
+          <div><span id="channel"></span><h3 id="title"></h3><small id="duration"></small></div>
+        </article>
+
+        <label>Formato e qualidade</label>
+        <div class="formats">
+          <label class="format active"><input type="radio" name="format" value="mp4-best" checked><span class="icon">4K</span><strong>Vídeo MAX</strong><small>Melhor vídeo + áudio</small></label>
+          <label class="format"><input type="radio" name="format" value="mp4-1080"><span class="icon">HD</span><strong>Full HD</strong><small>Até 1080p</small></label>
+          <label class="format"><input type="radio" name="format" value="audio-original"><span class="icon">♫</span><strong>Áudio original</strong><small>Sem conversão</small></label>
+          <label class="format"><input type="radio" name="format" value="mp3"><span class="icon">MP3</span><strong>MP3 máxima</strong><small>Qualidade VBR 0</small></label>
+        </div>
+
+        <div id="message" class="message hidden"></div>
+        <button id="downloadBtn" class="primary" type="submit"><span class="btn-text">Preparar e baixar</span><span class="spinner"></span></button>
+      </form>
+
+      <div class="limits"><span>⚡ Até 300 s</span><span>◈ /tmp protegido</span><span>⬇ Transferência automática</span></div>
+    </section>
+
+    <footer>Usa apenas conteúdos que tens autorização para descarregar.</footer>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
